@@ -2260,3 +2260,191 @@ where id = 1
 [0m10:08:45.906088 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 4.852799, "process_in_blocks": "0", "process_kernel_time": 1.25, "process_mem_max_rss": "531528", "process_out_blocks": "0", "process_user_time": 5.88}
 [0m10:08:45.906743 [debug] [Dummy-1   ]: Command `cli run` succeeded at 10:08:45.906479 after 4.85 seconds
 [0m10:08:45.907275 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 10:12:31.194206 | 36232eb8-dbab-4ad4-9990-dd38780dcd54 ==============================
+[0m10:12:31.194206 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m10:12:31.195229 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': '/tmp/dbt/logs', 'fail_fast': 'False', 'profiles_dir': '/tmp/dbt/', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'log_format': 'default', 'static_parser': 'True', 'target_path': '/tmp/dbt/target/', 'invocation_command': 'dbt ', 'send_anonymous_usage_stats': 'False'}
+[0m10:12:31.546606 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m10:12:32.295921 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m10:12:32.470819 [info ] [Dummy-1   ]: Unable to do partial parsing because a project config has changed
+[0m10:12:34.353097 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m10:12:34.355471 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m10:12:34.406113 [info ] [Dummy-1   ]: Found 3 models, 3 sources, 475 macros
+[0m10:12:34.408635 [info ] [Dummy-1   ]: 
+[0m10:12:34.409220 [info ] [Dummy-1   ]: Concurrency: 10 threads (target='dev')
+[0m10:12:34.409751 [info ] [Dummy-1   ]: 
+[0m10:12:34.410574 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m10:12:34.417535 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_sellerx_db'
+[0m10:12:34.674212 [debug] [ThreadPool]: Using snowflake connection "list_sellerx_db"
+[0m10:12:34.674883 [debug] [ThreadPool]: On list_sellerx_db: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "sellerx_dbt_project", "target_name": "dev", "connection_name": "list_sellerx_db"} */
+show terse schemas in database sellerx_db
+    limit 10000
+[0m10:12:34.675414 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:12:34.927404 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 0.252 seconds
+[0m10:12:34.931717 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_sellerx_db_sellerx_sch'
+[0m10:12:34.949822 [debug] [ThreadPool]: Using snowflake connection "list_sellerx_db_sellerx_sch"
+[0m10:12:34.950476 [debug] [ThreadPool]: On list_sellerx_db_sellerx_sch: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "sellerx_dbt_project", "target_name": "dev", "connection_name": "list_sellerx_db_sellerx_sch"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m10:12:34.950979 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:12:35.289429 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.338 seconds
+[0m10:12:35.295348 [debug] [ThreadPool]: Using snowflake connection "list_sellerx_db_sellerx_sch"
+[0m10:12:35.295968 [debug] [ThreadPool]: On list_sellerx_db_sellerx_sch: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "sellerx_dbt_project", "target_name": "dev", "connection_name": "list_sellerx_db_sellerx_sch"} */
+show objects in sellerx_db.sellerx_sch
+    limit 10000
+    
+;
+[0m10:12:35.350924 [debug] [ThreadPool]: SQL status: SUCCESS 8 in 0.054 seconds
+[0m10:12:35.353653 [debug] [ThreadPool]: Using snowflake connection "list_sellerx_db_sellerx_sch"
+[0m10:12:35.354209 [debug] [ThreadPool]: On list_sellerx_db_sellerx_sch: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "sellerx_dbt_project", "target_name": "dev", "connection_name": "list_sellerx_db_sellerx_sch"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m10:12:35.388847 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.034 seconds
+[0m10:12:35.405595 [debug] [Thread-2 (]: Began running node model.sellerx_dbt_project.staging__device
+[0m10:12:35.406307 [debug] [Thread-3 (]: Began running node model.sellerx_dbt_project.staging__store
+[0m10:12:35.406972 [debug] [Thread-4 (]: Began running node model.sellerx_dbt_project.staging__transaction
+[0m10:12:35.407854 [info ] [Thread-2 (]: 1 of 3 START sql dynamic_table model sellerx_sch.staging__device ............... [RUN]
+[0m10:12:35.408766 [info ] [Thread-3 (]: 2 of 3 START sql dynamic_table model sellerx_sch.staging__store ................ [RUN]
+[0m10:12:35.409580 [info ] [Thread-4 (]: 3 of 3 START sql dynamic_table model sellerx_sch.staging__transaction .......... [RUN]
+[0m10:12:35.410350 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_sellerx_db_sellerx_sch, now model.sellerx_dbt_project.staging__device)
+[0m10:12:35.410975 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_sellerx_db, now model.sellerx_dbt_project.staging__store)
+[0m10:12:35.411696 [debug] [Thread-4 (]: Acquiring new snowflake connection 'model.sellerx_dbt_project.staging__transaction'
+[0m10:12:35.412286 [debug] [Thread-2 (]: Began compiling node model.sellerx_dbt_project.staging__device
+[0m10:12:35.412831 [debug] [Thread-3 (]: Began compiling node model.sellerx_dbt_project.staging__store
+[0m10:12:35.413389 [debug] [Thread-4 (]: Began compiling node model.sellerx_dbt_project.staging__transaction
+[0m10:12:35.426067 [debug] [Thread-2 (]: Writing injected SQL for node "model.sellerx_dbt_project.staging__device"
+[0m10:12:35.433236 [debug] [Thread-3 (]: Writing injected SQL for node "model.sellerx_dbt_project.staging__store"
+[0m10:12:35.440199 [debug] [Thread-4 (]: Writing injected SQL for node "model.sellerx_dbt_project.staging__transaction"
+[0m10:12:35.441448 [debug] [Thread-2 (]: Began executing node model.sellerx_dbt_project.staging__device
+[0m10:12:35.442195 [debug] [Thread-3 (]: Began executing node model.sellerx_dbt_project.staging__store
+[0m10:12:35.454811 [debug] [Thread-4 (]: Began executing node model.sellerx_dbt_project.staging__transaction
+[0m10:12:35.488089 [debug] [Thread-2 (]: Applying REPLACE to: "SELLERX_DB"."SELLERX_SCH"."STAGING__DEVICE"
+[0m10:12:35.498116 [debug] [Thread-3 (]: Applying REPLACE to: "SELLERX_DB"."SELLERX_SCH"."STAGING__STORE"
+[0m10:12:35.503358 [debug] [Thread-4 (]: Applying REPLACE to: "SELLERX_DB"."SELLERX_SCH"."STAGING__TRANSACTION"
+[0m10:12:35.517683 [debug] [Thread-2 (]: Writing runtime sql for node "model.sellerx_dbt_project.staging__device"
+[0m10:12:35.519061 [debug] [Thread-3 (]: Writing runtime sql for node "model.sellerx_dbt_project.staging__store"
+[0m10:12:35.520298 [debug] [Thread-4 (]: Writing runtime sql for node "model.sellerx_dbt_project.staging__transaction"
+[0m10:12:35.522301 [debug] [Thread-2 (]: Using snowflake connection "model.sellerx_dbt_project.staging__device"
+[0m10:12:35.524135 [debug] [Thread-3 (]: Using snowflake connection "model.sellerx_dbt_project.staging__store"
+[0m10:12:35.524942 [debug] [Thread-2 (]: On model.sellerx_dbt_project.staging__device: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "sellerx_dbt_project", "target_name": "dev", "node_id": "model.sellerx_dbt_project.staging__device"} */
+create or replace dynamic table sellerx_db.sellerx_sch.staging__device
+        target_lag = 'downstream'
+        warehouse = sellerx_wh
+        refresh_mode = INCREMENTAL
+
+        initialize = ON_CREATE
+
+        as (
+            
+-- on_configuration_change="apply" | currently available to materialized views only
+
+select
+  id
+  , type
+  , store_id
+  , source_file_name
+  , source_file_last_modified_timestamp
+  , source_file_start_scan_time
+from sellerx_db.sellerx_sch.src_device as device
+where 1=1
+    and 
+    
+        1=1
+    
+
+        )
+[0m10:12:35.526497 [debug] [Thread-4 (]: Using snowflake connection "model.sellerx_dbt_project.staging__transaction"
+[0m10:12:35.527238 [debug] [Thread-3 (]: On model.sellerx_dbt_project.staging__store: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "sellerx_dbt_project", "target_name": "dev", "node_id": "model.sellerx_dbt_project.staging__store"} */
+create or replace dynamic table sellerx_db.sellerx_sch.staging__store
+        target_lag = 'downstream'
+        warehouse = sellerx_wh
+        refresh_mode = INCREMENTAL
+
+        initialize = ON_CREATE
+
+        as (
+            
+-- on_configuration_change="apply" | currently available to materialized views only
+
+select
+  id
+  , name
+  , address
+  , city
+  , country
+  , created_at
+  , typology
+  , customer_id
+  , source_file_name
+  , source_file_last_modified_timestamp
+  , source_file_start_scan_time
+from sellerx_db.sellerx_sch.src_store as store
+where 1=1
+    and 
+    
+        1=1
+    
+
+        )
+[0m10:12:35.527897 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m10:12:35.528656 [debug] [Thread-4 (]: On model.sellerx_dbt_project.staging__transaction: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "sellerx_dbt_project", "target_name": "dev", "node_id": "model.sellerx_dbt_project.staging__transaction"} */
+create or replace dynamic table sellerx_db.sellerx_sch.staging__transaction
+        target_lag = 'downstream'
+        warehouse = sellerx_wh
+        refresh_mode = INCREMENTAL
+
+        initialize = ON_CREATE
+
+        as (
+            
+-- on_configuration_change="apply" | currently available to materialized views only
+
+select
+  id
+  , device_id
+  , product_name
+  , product_sku
+  , amount
+  , status
+  , card_number
+  , cvv
+  , created_at
+  , happened_at
+  , source_file_name
+  , source_file_last_modified_timestamp
+  , source_file_start_scan_time
+from sellerx_db.sellerx_sch.src_transaction as transaction
+where 1=1
+    and 
+    
+        1=1
+    
+
+        )
+[0m10:12:35.529376 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m10:12:35.530111 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m10:12:36.526810 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.999 seconds
+[0m10:12:36.555481 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 1.026 seconds
+[0m10:12:36.564302 [info ] [Thread-2 (]: 1 of 3 OK created sql dynamic_table model sellerx_sch.staging__device .......... [[32mSUCCESS 1[0m in 1.15s]
+[0m10:12:36.565178 [info ] [Thread-3 (]: 2 of 3 OK created sql dynamic_table model sellerx_sch.staging__store ........... [[32mSUCCESS 1[0m in 1.15s]
+[0m10:12:36.566091 [debug] [Thread-2 (]: Finished running node model.sellerx_dbt_project.staging__device
+[0m10:12:36.566862 [debug] [Thread-3 (]: Finished running node model.sellerx_dbt_project.staging__store
+[0m10:12:36.570870 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 1.041 seconds
+[0m10:12:36.573800 [info ] [Thread-4 (]: 3 of 3 OK created sql dynamic_table model sellerx_sch.staging__transaction ..... [[32mSUCCESS 1[0m in 1.16s]
+[0m10:12:36.574643 [debug] [Thread-4 (]: Finished running node model.sellerx_dbt_project.staging__transaction
+[0m10:12:36.578617 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m10:12:36.579160 [debug] [Dummy-1   ]: Connection 'model.sellerx_dbt_project.staging__store' was properly closed.
+[0m10:12:36.579607 [debug] [Dummy-1   ]: Connection 'model.sellerx_dbt_project.staging__device' was properly closed.
+[0m10:12:36.580043 [debug] [Dummy-1   ]: Connection 'model.sellerx_dbt_project.staging__transaction' was properly closed.
+[0m10:12:36.580628 [info ] [Dummy-1   ]: 
+[0m10:12:36.581161 [info ] [Dummy-1   ]: Finished running 3 dynamic table models in 0 hours 0 minutes and 2.17 seconds (2.17s).
+[0m10:12:36.582474 [debug] [Dummy-1   ]: Command end result
+[0m10:12:36.611136 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m10:12:36.613399 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m10:12:36.620955 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m10:12:36.621484 [info ] [Dummy-1   ]: 
+[0m10:12:36.622143 [info ] [Dummy-1   ]: [32mCompleted successfully[0m
+[0m10:12:36.622621 [info ] [Dummy-1   ]: 
+[0m10:12:36.623141 [info ] [Dummy-1   ]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m10:12:36.624844 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 5.52304, "process_in_blocks": "0", "process_kernel_time": 0.99, "process_mem_max_rss": "538716", "process_out_blocks": "0", "process_user_time": 6.89}
+[0m10:12:36.625525 [debug] [Dummy-1   ]: Command `cli run` succeeded at 10:12:36.625235 after 5.52 seconds
+[0m10:12:36.626062 [debug] [Dummy-1   ]: Flushing usage events
