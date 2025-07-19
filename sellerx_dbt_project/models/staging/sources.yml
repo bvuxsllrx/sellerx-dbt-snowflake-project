@@ -1,0 +1,10 @@
+version: 2 
+
+sources: 
+    - name: sellerx_raw_data 
+      database: sellerx_db
+      schema: sellerx_sch
+      tables:
+        - name: src_device
+        - name: src_store 
+        - name: src_transaction

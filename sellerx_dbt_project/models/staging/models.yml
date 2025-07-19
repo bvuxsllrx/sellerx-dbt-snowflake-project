@@ -1,0 +1,28 @@
+version: 2 
+
+models: 
+    - name: staging__device
+      description: 'Device Data' # We can use dbt docs here
+      config: 
+        contract: 
+            enforced: true 
+      columns: 
+        - name: id 
+          description: 'Sample ID Desc' # We can use dbt docs here
+          data_type: varchar(32)
+        - name: type 
+          description: 'Sample Type Desc' # We can use dbt docs here
+          data_type: integer
+        - name: store_id 
+          description: 'Sample Store ID Desc' # We can use dbt docs here
+          data_type: varchar(32)
+        - name: source_file_name
+          description: 'Source File Name'
+          data_type: varchar(1028)
+        - name: source_file_last_modified_timestamp
+          description: 'Source File Last Modified Timestamp'
+          data_type: timestamp_ntz
+        - name: source_file_start_scan_time
+          description: 'Source File Start Scan Time'
+          data_type: timestamp_ltz
+      # we can add more automated tests here from dbt utils package
