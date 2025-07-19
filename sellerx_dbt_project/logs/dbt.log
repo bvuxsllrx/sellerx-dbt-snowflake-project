@@ -445,3 +445,85 @@ where id = 1
 [0m21:21:09.112384 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1052b7ad0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107586780>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107586360>]}
 [0m21:21:09.112563 [debug] [MainThread]: Flushing usage events
 [0m21:21:09.995529 [debug] [MainThread]: An error was encountered while trying to flush usage events
+
+
+============================== 09:48:25.399032 | 74fe74b9-2e8b-4b97-96ac-b224f5cae9e2 ==============================
+[0m09:48:25.399032 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m09:48:25.400122 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/tmp/dbt/', 'version_check': 'True', 'debug': 'False', 'log_path': '/tmp/dbt/logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt ', 'target_path': '/tmp/dbt/target/', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'False'}
+[0m09:48:25.750102 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m09:48:26.465568 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m09:48:26.621900 [info ] [Dummy-1   ]: Unable to do partial parsing because of a version mismatch
+[0m09:48:28.483370 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m09:48:28.485531 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m09:48:28.524265 [info ] [Dummy-1   ]: Found 2 models, 4 data tests, 474 macros
+[0m09:48:28.526880 [info ] [Dummy-1   ]: 
+[0m09:48:28.527470 [info ] [Dummy-1   ]: Concurrency: 10 threads (target='dev')
+[0m09:48:28.527949 [info ] [Dummy-1   ]: 
+[0m09:48:28.528870 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m09:48:28.535581 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_sellerx_db_sellerx_sch'
+[0m09:48:28.793874 [debug] [ThreadPool]: Using snowflake connection "list_sellerx_db_sellerx_sch"
+[0m09:48:28.794549 [debug] [ThreadPool]: On list_sellerx_db_sellerx_sch: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "sellerx_dbt_project", "target_name": "dev", "connection_name": "list_sellerx_db_sellerx_sch"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m09:48:28.795078 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m09:48:29.044064 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.249 seconds
+[0m09:48:29.049741 [debug] [ThreadPool]: Using snowflake connection "list_sellerx_db_sellerx_sch"
+[0m09:48:29.050302 [debug] [ThreadPool]: On list_sellerx_db_sellerx_sch: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "sellerx_dbt_project", "target_name": "dev", "connection_name": "list_sellerx_db_sellerx_sch"} */
+show objects in sellerx_db.sellerx_sch
+    limit 10000
+    
+;
+[0m09:48:29.148677 [debug] [ThreadPool]: SQL status: SUCCESS 8 in 0.098 seconds
+[0m09:48:29.151704 [debug] [ThreadPool]: Using snowflake connection "list_sellerx_db_sellerx_sch"
+[0m09:48:29.152290 [debug] [ThreadPool]: On list_sellerx_db_sellerx_sch: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "sellerx_dbt_project", "target_name": "dev", "connection_name": "list_sellerx_db_sellerx_sch"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m09:48:29.186331 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.033 seconds
+[0m09:48:29.199836 [debug] [Thread-2 (]: Began running node model.sellerx_dbt_project.my_first_dbt_model
+[0m09:48:29.200695 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_sellerx_db_sellerx_sch, now model.sellerx_dbt_project.my_first_dbt_model)
+[0m09:48:29.201309 [debug] [Thread-2 (]: Began compiling node model.sellerx_dbt_project.my_first_dbt_model
+[0m09:48:29.212967 [debug] [Thread-2 (]: Writing injected SQL for node "model.sellerx_dbt_project.my_first_dbt_model"
+[0m09:48:29.213919 [debug] [Thread-2 (]: Began executing node model.sellerx_dbt_project.my_first_dbt_model
+[0m09:48:29.214931 [debug] [Thread-2 (]: Finished running node model.sellerx_dbt_project.my_first_dbt_model
+[0m09:48:29.216317 [debug] [Thread-4 (]: Began running node model.sellerx_dbt_project.my_second_dbt_model
+[0m09:48:29.217000 [debug] [Thread-5 (]: Began running node test.sellerx_dbt_project.not_null_my_first_dbt_model_id.5fb22c2710
+[0m09:48:29.217719 [debug] [Thread-6 (]: Began running node test.sellerx_dbt_project.unique_my_first_dbt_model_id.16e066b321
+[0m09:48:29.218705 [debug] [Thread-4 (]: Acquiring new snowflake connection 'model.sellerx_dbt_project.my_second_dbt_model'
+[0m09:48:29.219456 [debug] [Thread-5 (]: Acquiring new snowflake connection 'test.sellerx_dbt_project.not_null_my_first_dbt_model_id.5fb22c2710'
+[0m09:48:29.220161 [debug] [Thread-6 (]: Acquiring new snowflake connection 'test.sellerx_dbt_project.unique_my_first_dbt_model_id.16e066b321'
+[0m09:48:29.220737 [debug] [Thread-4 (]: Began compiling node model.sellerx_dbt_project.my_second_dbt_model
+[0m09:48:29.221299 [debug] [Thread-5 (]: Began compiling node test.sellerx_dbt_project.not_null_my_first_dbt_model_id.5fb22c2710
+[0m09:48:29.221863 [debug] [Thread-6 (]: Began compiling node test.sellerx_dbt_project.unique_my_first_dbt_model_id.16e066b321
+[0m09:48:29.227899 [debug] [Thread-4 (]: Writing injected SQL for node "model.sellerx_dbt_project.my_second_dbt_model"
+[0m09:48:29.246397 [debug] [Thread-5 (]: Writing injected SQL for node "test.sellerx_dbt_project.not_null_my_first_dbt_model_id.5fb22c2710"
+[0m09:48:29.260238 [debug] [Thread-6 (]: Writing injected SQL for node "test.sellerx_dbt_project.unique_my_first_dbt_model_id.16e066b321"
+[0m09:48:29.261688 [debug] [Thread-4 (]: Began executing node model.sellerx_dbt_project.my_second_dbt_model
+[0m09:48:29.262746 [debug] [Thread-5 (]: Began executing node test.sellerx_dbt_project.not_null_my_first_dbt_model_id.5fb22c2710
+[0m09:48:29.263885 [debug] [Thread-4 (]: Finished running node model.sellerx_dbt_project.my_second_dbt_model
+[0m09:48:29.264552 [debug] [Thread-6 (]: Began executing node test.sellerx_dbt_project.unique_my_first_dbt_model_id.16e066b321
+[0m09:48:29.265490 [debug] [Thread-5 (]: Finished running node test.sellerx_dbt_project.not_null_my_first_dbt_model_id.5fb22c2710
+[0m09:48:29.266949 [debug] [Thread-8 (]: Began running node test.sellerx_dbt_project.not_null_my_second_dbt_model_id.151b76d778
+[0m09:48:29.267679 [debug] [Thread-9 (]: Began running node test.sellerx_dbt_project.unique_my_second_dbt_model_id.57a0f8c493
+[0m09:48:29.268666 [debug] [Thread-6 (]: Finished running node test.sellerx_dbt_project.unique_my_first_dbt_model_id.16e066b321
+[0m09:48:29.269885 [debug] [Thread-8 (]: Acquiring new snowflake connection 'test.sellerx_dbt_project.not_null_my_second_dbt_model_id.151b76d778'
+[0m09:48:29.270694 [debug] [Thread-9 (]: Acquiring new snowflake connection 'test.sellerx_dbt_project.unique_my_second_dbt_model_id.57a0f8c493'
+[0m09:48:29.271635 [debug] [Thread-8 (]: Began compiling node test.sellerx_dbt_project.not_null_my_second_dbt_model_id.151b76d778
+[0m09:48:29.272237 [debug] [Thread-9 (]: Began compiling node test.sellerx_dbt_project.unique_my_second_dbt_model_id.57a0f8c493
+[0m09:48:29.280135 [debug] [Thread-8 (]: Writing injected SQL for node "test.sellerx_dbt_project.not_null_my_second_dbt_model_id.151b76d778"
+[0m09:48:29.287244 [debug] [Thread-9 (]: Writing injected SQL for node "test.sellerx_dbt_project.unique_my_second_dbt_model_id.57a0f8c493"
+[0m09:48:29.288546 [debug] [Thread-8 (]: Began executing node test.sellerx_dbt_project.not_null_my_second_dbt_model_id.151b76d778
+[0m09:48:29.289622 [debug] [Thread-8 (]: Finished running node test.sellerx_dbt_project.not_null_my_second_dbt_model_id.151b76d778
+[0m09:48:29.290154 [debug] [Thread-9 (]: Began executing node test.sellerx_dbt_project.unique_my_second_dbt_model_id.57a0f8c493
+[0m09:48:29.291342 [debug] [Thread-9 (]: Finished running node test.sellerx_dbt_project.unique_my_second_dbt_model_id.57a0f8c493
+[0m09:48:29.295185 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m09:48:29.295738 [debug] [Dummy-1   ]: Connection 'model.sellerx_dbt_project.my_first_dbt_model' was properly closed.
+[0m09:48:29.296235 [debug] [Dummy-1   ]: Connection 'model.sellerx_dbt_project.my_second_dbt_model' was properly closed.
+[0m09:48:29.296690 [debug] [Dummy-1   ]: Connection 'test.sellerx_dbt_project.not_null_my_first_dbt_model_id.5fb22c2710' was properly closed.
+[0m09:48:29.297165 [debug] [Dummy-1   ]: Connection 'test.sellerx_dbt_project.unique_my_first_dbt_model_id.16e066b321' was properly closed.
+[0m09:48:29.297651 [debug] [Dummy-1   ]: Connection 'test.sellerx_dbt_project.not_null_my_second_dbt_model_id.151b76d778' was properly closed.
+[0m09:48:29.298126 [debug] [Dummy-1   ]: Connection 'test.sellerx_dbt_project.unique_my_second_dbt_model_id.57a0f8c493' was properly closed.
+[0m09:48:29.300049 [debug] [Dummy-1   ]: Command end result
+[0m09:48:29.331747 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m09:48:29.334342 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m09:48:29.343200 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m09:48:29.345265 [debug] [Dummy-1   ]: Resource report: {"command_name": "compile", "command_success": true, "command_wall_clock_time": 4.038239, "process_in_blocks": "0", "process_kernel_time": 1.05, "process_mem_max_rss": "534280", "process_out_blocks": "0", "process_user_time": 6.53}
+[0m09:48:29.346022 [debug] [Dummy-1   ]: Command `cli compile` succeeded at 09:48:29.345753 after 4.04 seconds
+[0m09:48:29.346667 [debug] [Dummy-1   ]: Flushing usage events

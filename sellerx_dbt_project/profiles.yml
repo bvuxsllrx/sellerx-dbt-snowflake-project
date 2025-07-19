@@ -1,0 +1,13 @@
+sellerx_dbt_project:
+  outputs:
+    dev:
+      account: fuppmmw-ne80044
+      database: sellerx_db
+      password: sellerxPassPass1
+      role: ACCOUNTADMIN
+      schema: sellerx_sch
+      threads: 10
+      type: snowflake
+      user: bvuxsllrx
+      warehouse: sellerx_wh
+  target: dev
